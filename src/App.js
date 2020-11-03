@@ -15,7 +15,6 @@ function App() {
         Authorization: "Client-ID 1QEFVARnjk__7cew3Va9jOdZowJhW-pa7IMcVwGm21s",
       },
     });
-    console.log(response.data.results);
     setItem(response.data.results);
   }
   return (

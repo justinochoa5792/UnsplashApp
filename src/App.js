@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import Axios from "axios";
+
 import SearchBar from "./Component/SearchBar";
+import ImageList from "./Component/ImageList";
 
 function App() {
   const [item, setItem] = useState([]);
@@ -19,18 +21,7 @@ function App() {
   return (
     <div className="ui container" style={{ marginTop: "10px" }}>
       <SearchBar pictures={onSearchSubmit} />
-      {item.map((eachItem) => {
-        return (
-          <ul>
-            <img src={eachItem.urls.small} alt={eachItem.id} />
-            <li>Description: {eachItem.alt_description}</li>
-            <li>
-              Name: {eachItem.user.first_name} {eachItem.user.last_name}
-            </li>
-            <li> Instagram: {eachItem.user.instagram_username}</li>
-          </ul>
-        );
-      })}
+      <ImageList item={item} />
     </div>
   );
 }
